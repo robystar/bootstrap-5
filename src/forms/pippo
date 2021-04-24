@@ -1,0 +1,7 @@
+select  pratica, online, data_prot,il, categoria,avvioproc.tipo as tipo_key, e_tipopratica.nome as tipo, foreign_id from pe.lavori inner join pe.avvioproc using(pratica) inner join pe.e_tipopratica on (e_tipopratica.id=avvioproc.tipo)
+where avvioproc.data_prot>='2020-01-01' 
+and il<data_prot
+and categoria not in (3,222,223,224,225,227) 
+and avvioproc.tipo not in (21303)
+and online=1
+order by 2

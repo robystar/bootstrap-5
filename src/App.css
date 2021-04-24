@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+fieldset.scheduler-border {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+  -webkit-box-shadow:  0px 0px 0px 0px #000;
+          box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+  font-size: 1.4em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  color:#47429E;
+  background-color:none !important;
+  width:auto;
+  padding:0 10px;
+  border-bottom:none;
+}
+
+.form-label{
+  font-weight: bold;
+}
+
+.form-label {
+  margin-left: 5px !important;
+}
+
+form label.required:before,
+  legend.required:before,
+  span.required:before
+{
+    color: Red;
+    content: "*";
+    padding-right: 0.2em;
+}
