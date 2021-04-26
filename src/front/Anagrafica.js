@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import SubFisica from "../forms/SubFisica";
+import SubFisica from "../forms/SubRichiedente";
 import { useFormContext } from "react-hook-form";
 import { useFieldArray } from "react-hook-form";
 

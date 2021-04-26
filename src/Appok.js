@@ -5,8 +5,7 @@ import Anagrafica from "./front/Anagrafica";
 import SubGiuridica from "./forms/SubGiuridica";
 import Delegato from "./forms/Delegato";
 import comuni from './db/comuni';
-import  SelectX  from "./components/prova3";
-import SelectComune from "./components/SelectComune";
+
 
 
 const startValues = {
@@ -72,9 +71,6 @@ const App = () => {
         </div>
 
         <Anagrafica />
-
-
-        <SelectComune id="comune_nato" name="comune_nato"/>
 
         <p><input type="submit" className="btn btn-primary" /></p>
       </form>
