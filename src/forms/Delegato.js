@@ -2,6 +2,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import SelectComune from "../components/SelectComune";
 import Input from '../components/FrmInput';
+import Options from '../components/FrmOptions';
 
 const Delegato = () => {
 
@@ -30,52 +31,12 @@ const Delegato = () => {
         </div>
         <div className="col-md-4">
           <Input id="delegato_cognome" label="Cognome" required register={register}/>
-
-
         </div>
         <div className="col-md-4">
-          <label htmlFor="delegato_nome" className="label required">
-            Nome
-          </label>
-          <span>
-            <input
-              className="form-control form-control-sm"
-              type="text"
-              id="delegato_nome"
-              {...register("delegato_nome")}
-            />
-          </span>
+          <Input id="delegato_nome" label="Nome" required register={register}/>
         </div>
         <div className="col-md-2">
-          <fieldset>
-            <legend className="col-form-label required">Sesso</legend>
-            <div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  id="delegato_sesso-m"
-                  defaultValue="M"
-                  {...register("delegato_sesso")}
-                  />
-                <label className="form-check-label" htmlFor="delegato_sesso-m">
-                  M
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  id="delegato_sesso-f"
-                  defaultValue="F"
-                  {...register("delegato_sesso")}
-                  />
-                <label className="form-check-label" htmlFor="delegato_sesso-f">
-                  F
-                </label>
-              </div>
-            </div>
-          </fieldset>
+          <Options id="delegato_sesso" label="Sesso" required values={['M','F']} register={register}/>
         </div>
       </div>
       <div className="row g-3 p-3">

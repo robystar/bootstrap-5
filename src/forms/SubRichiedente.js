@@ -3,6 +3,9 @@ import { useFormContext } from "react-hook-form";
 import { useFieldArray } from "react-hook-form";
 import FieldArray from './Mappali';
 import SelectComune from '../components/SelectComune';
+import Input from '../components/FrmInput';
+import Options from '../components/FrmOptions';
+
 
 let renderCount = 0;
 
@@ -38,63 +41,20 @@ const SubFisica = () => {
             <option value="Sig.ra">Sig.ra</option>
           </select>
         </div>
+
+        <div className="col-md-4">
+          <Input id="fisica_cognome" label="Cognome" required register={register}/>
+        </div>
+        <div className="col-md-4">
+          <Input id="fisica_nome" label="Nome" required register={register}/>
+        </div>
         <div className="col-md-2">
-          <label htmlFor="fisica_cognome" className="label required">
-            Cognome
-          </label>
-          <span>
-            <input
-              className="form-control"
-              type="text"
-              id="fisica_cognome"
-              {...register("fisica_cognome")}
-            />
-          </span>
+          <Options id="fisica_sesso" label="Sesso" type='checkbox' required values={['M','F']} register={register}/>
         </div>
-        <div className="col-md-4">
-          <label htmlFor="fisica_nome" className="label required">
-            Nome
-          </label>
-          <span>
-            <input
-              className="form-control"
-              type="text"
-              id="fisica_nome"
-              {...register("fisica_nome")}
-            />
-          </span>
-        </div>
-        <div className="col-md-4">
-          <fieldset>
-            <legend className="col-form-label required">Sesso</legend>
-            <div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  id="fisica_sesso-m"
-                  defaultValue="M"
-                  {...register("fisica_sesso")}
-                  />
-                <label className="form-check-label" htmlFor="fisica_sesso-m">
-                  M
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  id="fisica_sesso-f"
-                  defaultValue="F"
-                  {...register("fisica_sesso")}
-                  />
-                <label className="form-check-label" htmlFor="fisica_sesso-f">
-                  F
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+
+
+
+
       </div>
 
 

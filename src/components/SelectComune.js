@@ -39,6 +39,9 @@ type State = {
 
 const filterOptions = (inputValue: string) => {
   let results = [];
+  if (inputValue.length<2){
+    return []
+  }
   let re = RegExp('^' + inputValue, 'i');
   comuni.forEach(function(comune, index) {
       if (re.test(comune[1])) {
@@ -52,10 +55,8 @@ const promiseOptions = inputValue =>
   new Promise(resolve => {
     setTimeout(() => {
       resolve(filterOptions(inputValue));
-    }, 10);
+    }, 1000);
   });
-
-
 
 
 const SelectComune = ({...props}) => {
@@ -68,10 +69,8 @@ const SelectComune = ({...props}) => {
       {...props}
       control={control}
       render = {({field})=> {
-
-        console.log(props)
         return(<>
-        <label htmlFor="ffff">dfsafasfdasf</label>
+        <label htmlFor={props.id}>{props.label}</label>
          <AsyncSelect         {...field}
                               cacheOptions
                               defaultOptions
@@ -79,6 +78,7 @@ const SelectComune = ({...props}) => {
                               getOptionLabel={e => e.title}
                               getOptionValue={e => e.id}
                               loadOptions={promiseOptions}
+                              isClearable={true}
                               width='500px' 
                               height='20px'
                               styles={customStyles}

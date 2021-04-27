@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Input = ({register, error, label, id, ...inputProps}) => {
+const Input = ({register,  error, label, id, ...inputProps}) => {
     
-    const required = inputProps.required;
     return(
     <>
-    <label htmlFor={id} className={required?'label required':'label'}>{label}</label>
+    <label htmlFor={id} className={inputProps.required?'label required':'label'}>{label}</label>
     <input 
+     placeholder={label}
      className="form-control form-control-sm"
      id={id} 
      {...inputProps}
@@ -16,4 +16,3 @@ const Input = ({register, error, label, id, ...inputProps}) => {
 };
 
 export default Input;
-

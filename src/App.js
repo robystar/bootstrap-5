@@ -74,7 +74,7 @@ const App = () => {
         <Anagrafica />
 
 
-        <SelectComune id="comune_nato" name="comune_nato"/>
+        <SelectComune id="comune_nato" name="comune_nato" label="Coune di nascita"/>
 
         <p><input type="submit" className="btn btn-primary" /></p>
       </form>
